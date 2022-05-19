@@ -9,7 +9,7 @@ namespace Matrix
             Console.WriteLine("Hello World!");
 
            var matrix = new Matrix(5, 5);
-            matrix.SortMatrixDiagonal(5);
+            matrix.InitMatrixDiagonal(5);
             matrix.Show();
 
 

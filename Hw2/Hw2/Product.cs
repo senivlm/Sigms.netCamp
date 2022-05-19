@@ -64,6 +64,16 @@ namespace Hw2
 		{
 			return $"name: {_name}, price: {_price}, weight: {_weight}";
 		}
+		public override bool Equals(object obj)
+		{
+			if (obj.GetType() != this.GetType()) return false;
+
+			Product other = (Product)obj;
+
+			return (this._name == other._name)
+				&& (this._price == other._price)
+				&& (this._weight == other._weight);
+		}
 		public virtual void ChangePrice(int percentage)
 		{
 			Price = (Price * (decimal)(percentage / 100.0));

@@ -15,11 +15,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Рома\\source\\repos\\Sigma\\Hw2\\Hw2\\Hw2.csproj",
+      "projectUniqueName": "C:\\Users\\Рома\\source\\repos\\Sigma\\Sigms.netCamp\\Hw2\\Hw2\\Hw2.csproj",
       "projectName": "Hw2",
-      "projectPath": "C:\\Users\\Рома\\source\\repos\\Sigma\\Hw2\\Hw2\\Hw2.csproj",
+      "projectPath": "C:\\Users\\Рома\\source\\repos\\Sigma\\Sigms.netCamp\\Hw2\\Hw2\\Hw2.csproj",
       "packagesPath": "C:\\Users\\Рома\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Рома\\source\\repos\\Sigma\\Hw2\\Hw2\\obj\\",
+      "outputPath": "C:\\Users\\Рома\\source\\repos\\Sigma\\Sigms.netCamp\\Hw2\\Hw2\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",

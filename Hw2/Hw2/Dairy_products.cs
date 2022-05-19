@@ -28,6 +28,19 @@ namespace Hw2
         {
             return $"name: {Name}, price: {Price}, weight: {Weight}, dateOfManufacture:{DateOfManufacture}, dayToExpire:{DayToExpire}";
         }
+        public override bool Equals(object obj)
+        {
+            if (obj.GetType() != this.GetType()) return false;
+
+            Dairy_products other = (Dairy_products)obj;
+
+            return (this.Name == other.Name)
+                && (this.Price == other.Price)
+                && (this.Weight == other.Weight)
+                && (this.DateOfManufacture == other.DateOfManufacture)
+                && (this.DayToExpire == other.DayToExpire);
+
+        }
         public  void ChangePrice(int percentage,int percentageIsExpired)
         {
             Price = (Price * (decimal)(percentage / 100.0));

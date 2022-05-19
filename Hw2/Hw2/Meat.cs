@@ -22,6 +22,19 @@ namespace Hw2
         {
             return $"name: {Name}, price: {Price}, weight: {Weight}, meatCategory:{MeatCategory}, meatSpecies:{MeatSpecies}";
         }
+        public override bool Equals(object obj)
+        {
+            if (obj.GetType() != this.GetType()) return false;
+
+            Meat other = (Meat)obj;
+
+            return (this.Name == other.Name)
+                && (this.Price == other.Price)
+                && (this.Weight == other.Weight)
+                && (this.MeatSpecies == other.MeatSpecies)
+                && (this.MeatCategory == other.MeatCategory);
+
+        }
         public override void ChangePrice(int percentage)
         {
             Price = (Price * (decimal)(percentage / 100.0));

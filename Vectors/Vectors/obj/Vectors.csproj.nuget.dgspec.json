@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Рома\\source\\repos\\Sigma\\Vectors\\Vectors\\Vectors.csproj": {}
+    "C:\\Users\\Рома\\source\\repos\\Sigma\\Sigms.netCamp\\Vectors\\Vectors\\Vectors.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Рома\\source\\repos\\Sigma\\Vectors\\Vectors\\Vectors.csproj": {
+    "C:\\Users\\Рома\\source\\repos\\Sigma\\Sigms.netCamp\\Vectors\\Vectors\\Vectors.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Рома\\source\\repos\\Sigma\\Vectors\\Vectors\\Vectors.csproj",
+        "projectUniqueName": "C:\\Users\\Рома\\source\\repos\\Sigma\\Sigms.netCamp\\Vectors\\Vectors\\Vectors.csproj",
         "projectName": "Vectors",
-        "projectPath": "C:\\Users\\Рома\\source\\repos\\Sigma\\Vectors\\Vectors\\Vectors.csproj",
+        "projectPath": "C:\\Users\\Рома\\source\\repos\\Sigma\\Sigms.netCamp\\Vectors\\Vectors\\Vectors.csproj",
         "packagesPath": "C:\\Users\\Рома\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Рома\\source\\repos\\Sigma\\Vectors\\Vectors\\obj\\",
+        "outputPath": "C:\\Users\\Рома\\source\\repos\\Sigma\\Sigms.netCamp\\Vectors\\Vectors\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
