@@ -8,8 +8,20 @@ namespace Matrix
 {
     class Matrix
     {
-        
+        public int this[int i, int j]
+        {
+            get => matrix[i, j];
+            set
+            {
+                matrix[i, j] = value;
+            }
+        }
+
         int[,] matrix;
+        public Matrix():this(5,5)
+        {
+
+        }
         public Matrix(int rows, int cols)
         {
             if (rows < 0 || cols < 0)
@@ -18,50 +30,108 @@ namespace Matrix
             matrix = new int[rows, cols];
 
         }
-        public void InitMatrixDiagonal(int n) 
+        public void InitMatrixDiagonal()
         {
-            int number = 0;
-            for (int line = 0; line < n; line++)
+            if (matrix.GetLength(0) != matrix.GetLength(1))
+                throw new ArgumentException("matrix is not square");
+            int matrixSquare = matrix.Length;
+            int matrixLenth = matrix.GetLength(0);
+            int number = 1;
+            int numberForMirorReflection = matrixSquare;
+            int coeficientForMirorReflection;
+            int i1;
+            int j1;
+            int i2;
+            int j2;
+            for (int line = 0; line < matrixLenth; line++)
             {
-                if (line % 2 == 0) 
+                coeficientForMirorReflection = matrixLenth - 1 - line;
+                if (line % 2 != 0)
                 {
-                    int i1 = line;
-                    int j1 = 0;
-                    for (int i = 0; i < line; i++)
+                     i1 = 0;
+                     j1 = line;
+                    for (int i = 0; i <= line; i++)
                     {
                         matrix[i1, j1] = number++;
-                        i1--;
-                        j1++;
-                    }
-                
-                }
-                else 
-                {
-                    int i1 = 0;
-                    int j1 = line;
-                    for (int i = 0; i < line; i++)
-                    {
-                        matrix[i1, j1] = number++;
+                        if (matrixLenth != line)
+                        {
+                            i2 = j1 + coeficientForMirorReflection;
+                            j2 = i1 + coeficientForMirorReflection;
+                            matrix[i2, j2] = numberForMirorReflection--;
+                        }
                         i1++;
                         j1--;
                     }
                 }
-
+                else
+                {
+                    i1 = line;
+                    j1 = 0;
+                    for (int i = 0; i <= line; i++)
+                    {
+                        matrix[i1, j1] = number++;
+                        if (matrixLenth != line)
+                        {
+                            i2 = j1 + coeficientForMirorReflection;
+                            j2 = i1 + coeficientForMirorReflection;
+                            matrix[i2, j2] = numberForMirorReflection--;
+                        }
+                        i1--;
+                        j1++;
+                    }
+                }
             }
-        
         }
-        public void Show()
+        public override string ToString()
         {
-             
+            string matrixResult = string.Empty;
+
             for (int i = 0; i < matrix.GetLength(0); i++)
             {
                 for (int j = 0; j < matrix.GetLength(1); j++)
                 {
-                    Console.Write(matrix[i,j]);
+                    matrixResult += $"\t{matrix[i, j]}";
                 }
-                Console.WriteLine();
+                matrixResult += "\n";
             }
-           
+            return matrixResult;
         }
+        public void InitVerticalSnake() 
+        {
+            for (int j = 0, number = 1; j < matrix.GetLength(1); j++)
+            {
+                if (j % 2 == 0)
+                {
+                    for (int i = 0; i < matrix.GetLength(0); i++, number++)
+                    {
+                        matrix[i, j] = number;
+                    }
+                }
+                else 
+                {
+                    for (int i = matrix.GetLength(0)-1; i >=0; i--, number++)
+                    {
+                        matrix[i, j] = number;
+                    }
+                }
+                
+            }
+
+        }
+        //public void InitSpiralSnake()
+        //{
+        //    int matrixLenthX = matrix.GetLength(0);
+        //    int matrixLenthY = matrix.GetLength(1);
+        //    int number = 1;
+        //    for (int cou = 0,i=0,j=0; cou < matrix.Length; cou++)
+        //    {
+        //        if (cou < matrixLenthX)
+        //        {
+        //            matrix[i, j] = number++;
+        //            i++;
+        //        }
+
+        //    }
+        //}
     }
 }
