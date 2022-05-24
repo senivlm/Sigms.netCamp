@@ -5,9 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Hw2
-{
+{//відсутні методи долучення чи вилучення
     class Storage
-    {
+    {//Інкапсуляція!!!
         public List<Product> Products { get; set; }
         public Storage()
         {
@@ -18,7 +18,7 @@ namespace Hw2
             };
         }
         public Product this[int index]
-        {
+        {//Неконтрольований індекс
             get => Products[index];
             set => Products[index] = value;
         }
