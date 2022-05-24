@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Hw2
-{
+{//бажано надати користувачу роботу зі стрічкою для Enum
     class Meat : Product
     {
         public Meat(Sort meatCategory, Species meatSpecies,
