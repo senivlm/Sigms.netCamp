@@ -16,8 +16,8 @@ namespace Matrix
             matrix.InitVerticalSnake();
             Console.WriteLine(matrix.ToString());
 
-            matrix = new Matrix(3, 4);
-            matrix.InitSpiralSnake();
+            matrix = new Matrix(4, 4);
+            matrix.InitMatrixDiagonalByEnum();
             Console.WriteLine(matrix.ToString());
 
 

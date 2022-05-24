@@ -6,48 +6,25 @@ namespace Vector
     {
         static void Main(string[] args)
         {
-            /*Vector arr = new Vector(20);
-            arr.RandomInitialization(1, 5);
-
-            try
+            Vector arr = new Vector(12);
+            arr.InitShufle();
+            Console.WriteLine(arr);
+            arr.Reverse();
+            Console.WriteLine(arr);
+            arr.ReverseMy();
+            Console.WriteLine(arr);
+            Console.WriteLine(arr.CheckPolindrom());
+            int end = 2;
+            int number = 1;
+            for (int i = 0; i < 12;end++,number++)
             {
-                arr[0] = 999;
-                Console.WriteLine(arr[21]);
+                for (int j = 0; j < end&&i<12; i++,j++)
+                {
+                    arr[i] = number;
+                }
             }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
-
-
-            Pair[] pairs = arr.CalculateFreq();
-
-            for (int i = 0; i < pairs.Length; i++)
-            {
-                Console.Write(pairs[i] + "\n");
-            }
-            Console.WriteLine();
-
-            Console.WriteLine(pairs);
-            arr.RandomInitialization();
-            Console.WriteLine(arr);*/
-
-
-
-            Pair pair1 = new Pair(2, 5);
-            Pair pair2 = new Pair(2, 5);
-            Pair pair3 = pair1;
-            Console.WriteLine(pair1.Equals(pair2));
-            Console.WriteLine(ReferenceEquals(pair1, pair2));
-            Console.WriteLine(ReferenceEquals(pair1, pair3));
-            Console.WriteLine(pair1 == pair3);
-            Console.WriteLine(pair1 == pair2);
-            Console.WriteLine(pair1.GetHashCode());
-            Console.WriteLine(pair2.GetHashCode());
-            Console.WriteLine(pair3.GetHashCode());
-            Console.WriteLine(pair3.GetType());
-
-
+            Console.WriteLine(arr); 
+            Console.WriteLine(arr.FindLongerSameFigure());
 
         }
     }

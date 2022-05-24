@@ -41,7 +41,7 @@ namespace Vector
         }
 
         public Vector() { }
-
+     
         public void RandomInitialization(int a, int b)
         {
             Random random = new Random();
@@ -51,33 +51,22 @@ namespace Vector
             }
         }
 
-        public void RandomInitialization()
+        public void InitShufle()
         {
-            //int index = Array.IndexOf(arr, 2);
-            //Console.WriteLine(index);
-
             Random random = new Random();
             int x;
             for (int i = 0; i < arr.Length; i++)
             {
-                while(arr[i] == 0)
+                x = random.Next(1, arr.Length+1 );
+                for (int j = 0; j < i; j++)
                 {
-                    x = random.Next(1, arr.Length + 1);
-                    bool isExist = false;
-                    for (int j = 0; j < i; j++)
+                    if (arr[j] == x)
                     {
-                        if (x == arr[j])
-                        {
-                            isExist = true;
-                            break;
-                        }
-                    }
-                    if (!isExist)
-                    {
-                        arr[i] = x;
-                        break;
+                        x = random.Next(1, arr.Length + 1);
+                        j = -1;
                     }
                 }
+                arr[i] = x;
             }
         }
 
@@ -131,5 +120,63 @@ namespace Vector
             }
             return str;
         }
+        public void InitPolindrom()
+        {
+            for (int i = 0; i < arr.Length / 2; i++)
+            {
+                arr[^(i + 1)] = i;
+                arr[i] = arr[^(i + 1)];
+            }
+            if (arr.Length % 2 == 1)
+                arr[arr.Length / 2] = arr[arr.Length / 2-1] + 1;
+
+        }
+        public bool CheckPolindrom() 
+        {
+            
+            for (int i = 0; i < arr.Length / 2; i++)
+            {
+                if (arr[i] != arr[^(i+1)])
+                    return false;
+            }
+            return true;
+        }
+        public void ReverseMy() 
+        {
+            int temp;
+            for (int i = 0; i < arr.Length / 2; i++)
+            {
+                temp = arr[i];
+                arr[i] = arr[^(i + 1)];
+                arr[^(i + 1)] = temp;
+            }
+
+        }
+        public void Reverse()
+        {
+            arr=arr.Reverse().ToArray();
+        }
+        public string FindLongerSameFigure() 
+        {
+            string result=string.Empty;
+            int longer = 0;
+            int figure = 0;
+            int count=1;
+            for (int i = 0; i < arr.Length-1; i++)
+            {
+                if (arr[i] == arr[i + 1])
+                    count++;
+                else
+                    count = 1;
+                if (count > longer)
+                {
+                    longer = count;
+                    figure = arr[i];
+                    result = figure+" "+count;
+                }
+            }
+            return result;
+        }
     }
+
 }
