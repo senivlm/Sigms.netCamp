@@ -5,7 +5,8 @@ namespace Vector
     class Program
     {
         static void Main(string[] args)
-        {
+        {//ваш номер 44. 
+           // дотримуйтесь порядку 
             Vector arr = new Vector(12);
             arr.InitShufle();
             Console.WriteLine(arr);
